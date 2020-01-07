@@ -1,16 +1,18 @@
-import React from 'react'
-import { View, Text } from 'react-native'
 import {createStackNavigator} from 'react-navigation-stack'
 import {createAppContainer} from 'react-navigation';
 import Home from '../Components/Home'
 import Friends from '../Components/Friends';
+import About from '../Components/About'
 
 const screens ={
-    Home:{
+    Joe:{
         screen: Home
     },
     Friend: {
         screen:Friends
+    },
+    About:{
+        screen: About
     },
 
 }
@@ -18,3 +20,5 @@ const screens ={
 const homeStack = createStackNavigator(screens);
 
 export default createAppContainer(homeStack)
+
+
