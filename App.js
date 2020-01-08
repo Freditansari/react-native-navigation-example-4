@@ -1,11 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+
 import Navigator from './Routers/DrawerNav';
+
 
 export default function App() {
   return (
 
-      <Navigator />
+       <Navigator />
+  
+     
 
   );
 }

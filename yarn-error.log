@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/13.5.0/bin/node /usr/local/bin/yarn add react-native-safe-area-view react-native-safe-area-context.
+  /usr/local/Cellar/node/13.5.0/bin/node /usr/local/bin/yarnpkg install
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -14,17 +14,15 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/react-native-safe-area-context.: Not found
-      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66947:18)
-      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140665:22)
-      at Request.emit (events.js:305:20)
-      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141637:10)
-      at Request.emit (events.js:305:20)
-      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141559:12)
-      at Object.onceWrapper (events.js:411:28)
-      at IncomingMessage.emit (events.js:317:22)
-      at endReadableNT (_stream_readable.js:1215:12)
-      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+  Error: connect ENETUNREACH 104.16.20.35:443 - Local (0.0.0.0:52131)
+      at internalConnect (net.js:916:16)
+      at defaultTriggerAsyncIdScope (internal/async_hooks.js:310:12)
+      at emitLookup (net.js:1058:9)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:107440:28
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:107349:13
+      at RawTask.module.exports.RawTask.call (/usr/local/lib/node_modules/yarn/lib/cli.js:83573:19)
+      at flush (/usr/local/lib/node_modules/yarn/lib/cli.js:83655:29)
+      at processTicksAndRejections (internal/process/task_queues.js:79:11)
 
 npm manifest: 
   {
@@ -37,13 +35,15 @@ npm manifest:
       "eject": "expo eject"
     },
     "dependencies": {
+      "@react-native-community/masked-view": "^0.1.5",
       "expo": "~36.0.0",
       "react": "~16.9.0",
       "react-dom": "~16.9.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
       "react-native-gesture-handler": "~1.5.0",
       "react-native-reanimated": "~1.4.0",
-      "react-native-safe-area-view": "react-native-community/react-native-safe-area-view",
+      "react-native-safe-area-context": "0.6.0",
+      "react-native-safe-area-view": "^1.0.0",
       "react-native-screens": "2.0.0-alpha.12",
       "react-native-web": "~0.11.7",
       "react-navigation": "^4.0.10",
@@ -1103,6 +1103,11 @@ Lockfile:
       sudo-prompt "^9.0.0"
       wcwidth "^1.0.1"
       ws "^1.1.0"
+  
+  "@react-native-community/masked-view@^0.1.5":
+    version "0.1.5"
+    resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.5.tgz#25421be6cd943a4b1660b62cfbcd45be8891462c"
+    integrity sha512-Lj1DzfCmW0f4HnmHtEuX8Yy2f7cnUA8r5KGGUuDDGtQt1so6QJkKeUmsnLo2zYDtsF8due6hvIL06Vdo5xxuLQ==
   
   "@react-navigation/core@^3.5.1":
     version "3.5.1"
@@ -4225,6 +4230,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.4.0.tgz#7f1acbf9be08492d834f512700570978052be2f9"
     integrity sha512-tO7nSNNP+iRLVbkcSS5GXyDBb7tSI02+XuRL3/S39EAr35rnvUy2JfeLUQG+fWSObJjnMVhasUDEUwlENk8IXw==
   
+  react-native-safe-area-context@0.6.0:
+    version "0.6.0"
+    resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-0.6.0.tgz#f53f5a5bcafb462a8798a26b145e68946389ad60"
+    integrity sha512-blY0akr3ZLTuZFdUotmjV+7LVXpBnd5CGFlNhTiarNNGJoHu79K42IJpUpmtg75iC9aWbSW7QHstlP0xz11V0A==
+  
   react-native-safe-area-view@^0.14.1:
     version "0.14.8"
     resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.14.8.tgz#ef33c46ff8164ae77acad48c3039ec9c34873e5b"
@@ -4232,9 +4242,10 @@ Lockfile:
     dependencies:
       hoist-non-react-statics "^2.3.1"
   
-  react-native-safe-area-view@react-native-community/react-native-safe-area-view:
+  react-native-safe-area-view@^1.0.0:
     version "1.0.0"
-    resolved "https://codeload.github.com/react-native-community/react-native-safe-area-view/tar.gz/b84445b13d26fd8c5a990175becf340b0179b140"
+    resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-1.0.0.tgz#17be33aeb30702e07bb846378f4c9561e2dd6684"
+    integrity sha512-cJOBfM6t7HL3NQf3QTVKO6BU7esCCMbKJjpNy9L2nT724UzZ2y6E3ol/3QWsw7ySegWlF857+RIkRLsnpltFVg==
     dependencies:
       hoist-non-react-statics "^2.3.1"
   
